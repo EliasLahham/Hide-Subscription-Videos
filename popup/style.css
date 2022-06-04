@@ -1,3 +1,39 @@
+table, th, td, tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table {
+    max-width: 260px;
+    width: 100%;
+    table-layout: fixed;
+}
+
+td {
+    word-wrap: break-word;
+}
+
+#reset-keywords, #cancel-reset-keywords {
+    display: inline-block;
+}
+
 .popup-window {
-    
+    width: 280px;
+    height: 300px;
+}
+
+.header-row {
+    background-color: #ddd;
+}
+
+.keyword-header {
+    width: 25%;
+}
+
+.action-header {
+    width: 75%;
+}
+
+.center {
+    text-align: center;
 }

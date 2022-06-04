@@ -4,24 +4,25 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="style.css">
 	</head>
-	<body>
+	<body style="font-family: sans-serif">
 		<div id="popup-content" class="popup-window">
+			<div id="read-me">
+				<a href="https://github.com/EliasLahham/Hide-Subscription-Videos" target="_blank">Need help?</a>
+			</div>
+			<br/>
 			<label for="name">Keyword: </label>
 			<input id="keyword" type="text" name="name">
-			<button id="save">Save</button>
-		</div>
-		<div id="keywords">
-			<table id="keyword-table">
-				<tr>
-					<th>Keyword</th>
-					<th>Action</th>
-				</tr>
-			</table>
-		</div>
-		<br/>
-		<div>
-			<button id="reset-keywords">Reset Keywords</button>
-			<button id="cancel-reset-keywords" style="display: none;">Cancel</button>
+			<button id="add">Add</button>
+			<br/>
+			<br/>
+			<div>
+				<button id="reset-keywords">Reset Keywords</button>
+				<button id="cancel-reset-keywords" style="display: none;">Cancel</button>
+			</div>
+			<br/>
+			<div id="keywords">
+				
+			</div>
 		</div>
 		<script src="popup.js"></script>
 	</body>

@@ -4,17 +4,17 @@ function popupStartUp() {
 }
 
 function eventListeners() {
-	document.getElementById('save').addEventListener('click', storeKeyword);
+	document.getElementById('add').addEventListener('click', addKeyword);
 	document.getElementById('keyword').addEventListener('keydown', function(event) {
 		if (event.key === 'Enter') {
-			storeKeyword();
+			addKeyword();
 		}
 	});
 	document.getElementById('reset-keywords').addEventListener('click', resetKeywords);
 	document.getElementById('cancel-reset-keywords').addEventListener('click', cancelResetKeywords);
 }
 
-function storeKeyword() {
+function addKeyword() {
 	var keyword = document.getElementById('keyword').value.toLowerCase();
 	if (keyword) { 
 		browser.storage.local.set({[keyword]: keyword});
@@ -31,15 +31,32 @@ function deleteKeyword(keyword) {
 function displayKeywordsOnTable() {
 	browser.storage.local.get().then(function(result) {
 		var keywords = Object.keys(result);
-		var table = document.getElementById('keyword-table');
-		table.innerHTML = '';
+		var keywordsDiv = document.getElementById('keywords');
+		if (keywords.length != 0) {
+			var table = document.createElement('table');
+			keywordsDiv.innerHTML = '';
+			keywordsDiv.appendChild(table);
+			var headerRow = document.createElement('tr');
+			headerRow.classList.add('header-row');
+			var keywordHeader = document.createElement('th');
+			keywordHeader.classList.add('keyword-header');
+			keywordHeader.innerText = 'Keyword';
+			var actionHeader = document.createElement('th');
+			actionHeader.innerText = 'Action';
+			keywordHeader.classList.add('action-header');
+			headerRow.appendChild(keywordHeader);
+			headerRow.appendChild(actionHeader);
+			table.appendChild(headerRow);
+		} else {
+			keywordsDiv.innerHTML = '';
+		}
 		keywords.forEach(function(keyword) {
 			var row = document.createElement('tr');
 			var keywordColumn = document.createElement('td');
 			keywordColumn.innerText = keyword;
 			var actionColumn = document.createElement('td');
 			var deleteButton = document.createElement('button');
-			deleteButton.innerText = 'Delete';
+			deleteButton.innerText = 'Remove';
 			deleteButton.addEventListener('click', function() {
 				deleteKeyword(keyword);
 			});
@@ -58,7 +75,7 @@ function resetKeywords() {
 		cancelResetKeywords();
 	} else {
 		document.getElementById('reset-keywords').innerText = 'Are you sure?';
-		document.getElementById('cancel-reset-keywords').style.display = 'block';
+		document.getElementById('cancel-reset-keywords').style.display = 'inline-block';
 	}
 }
 
