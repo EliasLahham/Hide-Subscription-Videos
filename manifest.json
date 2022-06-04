@@ -27,7 +27,7 @@
 		}
 	],
 	"browser_action": {
-		"default_icon": "icons/youtube.png",
+		"default_icon": "icons/extLogo.png",
 		"default_title": "Hide Subscription Videos",
 		"default_popup": "popup/view.html"
 	}
