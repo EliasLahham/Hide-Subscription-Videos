@@ -40,9 +40,7 @@ function displayKeywordsOnTable() {
 			var actionHeader = document.createElement('th');
 
 			keywordHeader.classList.add('keyword-header');
-			actionHeader.classList.add('action-header');
-			keywordHeader.innerText = 'Keyword';
-			actionHeader.innerText = 'Action';
+			keywordHeader.innerText = 'Keywords';
 
 			headerRow.appendChild(keywordHeader);
 			headerRow.appendChild(actionHeader);

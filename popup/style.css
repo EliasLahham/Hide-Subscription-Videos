@@ -28,14 +28,8 @@ td, th {
 	color: white;
 }
 
-
 #reset-keywords, #cancel-reset-keywords {
 	display: inline-block;
-}
-
-.action-header {
-	text-align: center;
-	width: 25%;
 }
 
 .addon-button {
@@ -55,6 +49,10 @@ td, th {
 	background-color: #4CAF50;
 }
 
+.btn-red {
+	background-color: #b14848;
+}
+
 .button {
 	border: none;
 	border-radius: 6px;
@@ -63,10 +61,6 @@ td, th {
 	font-size: 16px;
 	padding: 5px;
 	text-align: center;
-}
-
-.cancel-button {
-	background-color: #b14848;
 }
 
 .github-button {
