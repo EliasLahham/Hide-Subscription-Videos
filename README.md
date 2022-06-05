@@ -4,6 +4,7 @@ Hides certain YouTube videos in a user's subscription feed based on keywords fou
 ![image](https://user-images.githubusercontent.com/17418745/172022720-338cc4c4-a9ec-42ac-be44-5a9c023db17d.png)
 
 [Firefox Add-on](https://addons.mozilla.org/en-US/firefox/addon/hide-subscription-videos/)
+
 Chrome extension TBD
 
 # Instructions:
