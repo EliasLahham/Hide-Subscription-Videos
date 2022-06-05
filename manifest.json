@@ -4,7 +4,7 @@
 	"description": "Hide certain videos from your Subscription feed based on keywords in a video's title",
 	"version": "1.0.0",
 	"icons": {
-		"64": "icons/extLogo.png"
+		"256": "icons/extLogo.png"
 	},
 	"permissions": [
 		"storage"
@@ -21,8 +21,7 @@
 				"*://*.youtube.com/feed/subscriptions"
 			],
 			"js": [
-				"app.js",
-				"popup/popup.js"
+				"app.js"
 			]
 		}
 	],

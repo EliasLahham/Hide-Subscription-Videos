@@ -1,39 +1,105 @@
-table, th, td, tr {
-    border: 1px solid black;
-    border-collapse: collapse;
+body {
+	font-family: sans-serif;
+	background: #1c1b22;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+input[type=text] {
+	border: none;
 }
 
 table {
-    max-width: 260px;
-    width: 100%;
-    table-layout: fixed;
+	background-color: #3a3942;
+	border: 1px solid #8b3e3e;
+	border-radius: 6px;
+	margin-bottom: 8px;
+	padding: 5px;
+	table-layout: fixed;
+	width: 270px;
 }
 
 td {
-    word-wrap: break-word;
+	word-wrap: break-word;
+	padding: 3px;
 }
+
+td, th {
+	color: white;
+}
+
 
 #reset-keywords, #cancel-reset-keywords {
-    display: inline-block;
-}
-
-.popup-window {
-    width: 280px;
-    height: 300px;
-}
-
-.header-row {
-    background-color: #ddd;
-}
-
-.keyword-header {
-    width: 25%;
+	display: inline-block;
 }
 
 .action-header {
-    width: 75%;
+	text-align: center;
+	width: 25%;
 }
 
-.center {
-    text-align: center;
+.addon-button {
+	background-color: #9b3cf5;
+}
+
+.action-button {
+	border: none;
+	border-radius: 4px;
+	color: white;
+	cursor: pointer;
+	font-size: 14px;
+	text-align: center;
+}
+
+.btn-green {
+	background-color: #4CAF50;
+}
+
+.button {
+	border: none;
+	border-radius: 6px;
+	color: white;
+	cursor: pointer;
+	font-size: 16px;
+	padding: 5px;
+	text-align: center;
+}
+
+.cancel-button {
+	background-color: #b14848;
+}
+
+.github-button {
+	background-color: #666666;
+}
+
+.gray-container {
+	border: 1px solid #8b3e3e;
+	border-radius: 6px;
+	background-color: #3a3942;
+	padding: 5px;
+	width: 260px;
+}
+
+.href-button {
+	border-radius: 6px;
+	color: white;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	padding: 5px;
+}
+
+.keyword-header {
+	text-align: left;
+	width: 75%;
+}
+
+.popup-window {
+	width: 300px;
+	height: 300px;
+}
+
+.remove-button {
+	background-color: #b14848;
 }

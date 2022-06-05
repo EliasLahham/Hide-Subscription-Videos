@@ -23,7 +23,7 @@ function addKeyword() {
 	}
 }
 
-function deleteKeyword(keyword) {
+function removeKeyword(keyword) {
 	browser.storage.local.remove(keyword);
 	displayKeywordsOnTable();
 }
@@ -37,7 +37,6 @@ function displayKeywordsOnTable() {
 			keywordsDiv.innerHTML = '';
 			keywordsDiv.appendChild(table);
 			var headerRow = document.createElement('tr');
-			headerRow.classList.add('header-row');
 			var keywordHeader = document.createElement('th');
 			keywordHeader.classList.add('keyword-header');
 			keywordHeader.innerText = 'Keyword';
@@ -55,12 +54,14 @@ function displayKeywordsOnTable() {
 			var keywordColumn = document.createElement('td');
 			keywordColumn.innerText = keyword;
 			var actionColumn = document.createElement('td');
-			var deleteButton = document.createElement('button');
-			deleteButton.innerText = 'Remove';
-			deleteButton.addEventListener('click', function() {
-				deleteKeyword(keyword);
+			var removeButton = document.createElement('button');
+			removeButton.classList.add('action-button');
+			removeButton.classList.add('remove-button');
+			removeButton.innerText = 'Remove';
+			removeButton.addEventListener('click', function() {
+				removeKeyword(keyword);
 			});
-			actionColumn.appendChild(deleteButton);
+			actionColumn.appendChild(removeButton);
 			row.appendChild(keywordColumn);
 			row.appendChild(actionColumn);
 			table.appendChild(row);

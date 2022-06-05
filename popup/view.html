@@ -4,20 +4,22 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="style.css">
 	</head>
-	<body style="font-family: sans-serif">
+	<body>
 		<div id="popup-content" class="popup-window">
-			<div id="read-me">
-				<a href="https://github.com/EliasLahham/Hide-Subscription-Videos" target="_blank">Need help?</a>
+			<div id="info-section">
+				<a class="href-button addon-button" href=" https://addons.mozilla.org/en-US/firefox/addon/hide-subscription-videos/" target="_blank">Add-on Page</a>
+				<a class="href-button github-button" href="https://github.com/EliasLahham/Hide-Subscription-Videos" target="_blank">GitHub</a>
 			</div>
 			<br/>
-			<label for="name">Keyword: </label>
-			<input id="keyword" type="text" name="name">
-			<button id="add">Add</button>
+			<div class="gray-container">
+				<label for="name" style="color: white;">Keyword: </label>
+				<input id="keyword" type="text" name="name">
+				<button id="add" class="button btn-green">Add</button>
+			</div>
 			<br/>
-			<br/>
-			<div>
-				<button id="reset-keywords">Reset Keywords</button>
-				<button id="cancel-reset-keywords" style="display: none;">Cancel</button>
+			<div id="reset">
+				<button id="reset-keywords" class="button btn-green">Reset Keywords</button>
+				<button id="cancel-reset-keywords"  class="button cancel-button" style="display: none;">Cancel</button>
 			</div>
 			<br/>
 			<div id="keywords">
