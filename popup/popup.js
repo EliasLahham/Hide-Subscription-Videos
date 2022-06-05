@@ -32,35 +32,38 @@ function displayKeywordsOnTable() {
 	browser.storage.local.get().then(function(result) {
 		var keywords = Object.keys(result);
 		var keywordsDiv = document.getElementById('keywords');
+		keywordsDiv.innerHTML = '';
 		if (keywords.length != 0) {
 			var table = document.createElement('table');
-			keywordsDiv.innerHTML = '';
-			keywordsDiv.appendChild(table);
 			var headerRow = document.createElement('tr');
 			var keywordHeader = document.createElement('th');
-			keywordHeader.classList.add('keyword-header');
-			keywordHeader.innerText = 'Keyword';
 			var actionHeader = document.createElement('th');
+
+			keywordHeader.classList.add('keyword-header');
+			actionHeader.classList.add('action-header');
+			keywordHeader.innerText = 'Keyword';
 			actionHeader.innerText = 'Action';
-			keywordHeader.classList.add('action-header');
+
 			headerRow.appendChild(keywordHeader);
 			headerRow.appendChild(actionHeader);
 			table.appendChild(headerRow);
-		} else {
-			keywordsDiv.innerHTML = '';
+			keywordsDiv.appendChild(table);
 		}
+
 		keywords.forEach(function(keyword) {
 			var row = document.createElement('tr');
 			var keywordColumn = document.createElement('td');
-			keywordColumn.innerText = keyword;
 			var actionColumn = document.createElement('td');
 			var removeButton = document.createElement('button');
+
+			keywordColumn.innerText = keyword;
 			removeButton.classList.add('action-button');
 			removeButton.classList.add('remove-button');
 			removeButton.innerText = 'Remove';
 			removeButton.addEventListener('click', function() {
 				removeKeyword(keyword);
 			});
+
 			actionColumn.appendChild(removeButton);
 			row.appendChild(keywordColumn);
 			row.appendChild(actionColumn);
