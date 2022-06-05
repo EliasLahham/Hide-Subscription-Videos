@@ -23,9 +23,20 @@ function addKeyword() {
 	}
 }
 
-function removeKeyword(keyword) {
-	browser.storage.local.remove(keyword);
-	displayKeywordsOnTable();
+function resetKeywords() {
+	if (document.getElementById('reset-keywords').innerText === 'Are you sure?') {
+		browser.storage.local.clear();
+		displayKeywordsOnTable();
+		cancelResetKeywords();
+	} else {
+		document.getElementById('reset-keywords').innerText = 'Are you sure?';
+		document.getElementById('cancel-reset-keywords').style.display = 'inline-block';
+	}
+}
+
+function cancelResetKeywords() {
+	document.getElementById('reset-keywords').innerText = 'Reset Keywords';
+	document.getElementById('cancel-reset-keywords').style.display = 'none';
 }
 
 function displayKeywordsOnTable() {
@@ -70,20 +81,9 @@ function displayKeywordsOnTable() {
 	});
 }
 
-function resetKeywords() {
-	if (document.getElementById('reset-keywords').innerText === 'Are you sure?') {
-		browser.storage.local.clear();
-		displayKeywordsOnTable();
-		cancelResetKeywords();
-	} else {
-		document.getElementById('reset-keywords').innerText = 'Are you sure?';
-		document.getElementById('cancel-reset-keywords').style.display = 'inline-block';
-	}
-}
-
-function cancelResetKeywords() {
-	document.getElementById('reset-keywords').innerText = 'Reset Keywords';
-	document.getElementById('cancel-reset-keywords').style.display = 'none';
+function removeKeyword(keyword) {
+	browser.storage.local.remove(keyword);
+	displayKeywordsOnTable();
 }
 
 popupStartUp();
