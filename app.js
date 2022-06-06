@@ -5,7 +5,7 @@ function startUp() {
 		return;
 	}
 	if (app) {
-		console.log('%c[Hide-Subscription-Videos] is running!', 'color: #03fc24;');
+		console.log('%c[Hide-Subscription-Videos] Scraping videos...', 'color: #03fc24;');
 		scrapeForVideos();
 	}
 }
@@ -16,7 +16,7 @@ function scrapeForVideos() {
 			return;
 		}
 		app.querySelectorAll('ytd-grid-video-renderer').forEach(function (video, index) {
-			hideVideo(keywords, video, index)
+			hideVideo(Object.keys(keywords), video, index)
 		});
 	}).catch(error => {
 		console.log('[Hide-Subscription-Videos] Error: ' + error);
@@ -24,10 +24,8 @@ function scrapeForVideos() {
 }
 
 function hideVideo(keywords, video, index) {
-	var keywords = Object.keys(keywords);
-	var title = video.innerText.toLowerCase();
-	keywords.every(function(keyword) {
-		if (title.includes(keyword)) {
+	keywords.every(keyword => {
+		if (video.innerText.toLowerCase().includes(keyword)) {
 			console.log(`Hiding video: ${video.innerText}`);
 			video.remove();
 			return false;
@@ -36,4 +34,12 @@ function hideVideo(keywords, video, index) {
 	});
 }
 
+// On finished load of YouTube page
 document.addEventListener('yt-navigate-finish', startUp);
+
+// On scrolling to bottom of the page
+window.addEventListener('scroll', function() {
+	if (document.documentElement.scrollHeight - window.innerHeight === document.documentElement.scrollTop) {
+		startUp();
+	}
+});

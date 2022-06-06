@@ -5,7 +5,7 @@ function popupStartUp() {
 
 function eventListeners() {
 	document.getElementById('add').addEventListener('click', addKeyword);
-	document.getElementById('keyword').addEventListener('keydown', function(event) {
+	document.getElementById('keyword').addEventListener('keydown', event => {
 		if (event.key === 'Enter') {
 			addKeyword();
 		}
@@ -40,7 +40,7 @@ function cancelResetKeywords() {
 }
 
 function displayKeywordsOnTable() {
-	browser.storage.local.get().then(function(result) {
+	browser.storage.local.get().then(result => {
 		var keywords = Object.keys(result);
 		var keywordsDiv = document.getElementById('keywords');
 		keywordsDiv.innerHTML = '';
@@ -59,7 +59,7 @@ function displayKeywordsOnTable() {
 			keywordsDiv.appendChild(table);
 		}
 
-		keywords.forEach(function(keyword) {
+		keywords.forEach(keyword => {
 			var row = document.createElement('tr');
 			var keywordColumn = document.createElement('td');
 			var actionColumn = document.createElement('td');
