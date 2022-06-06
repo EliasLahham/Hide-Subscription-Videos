@@ -1,7 +1,7 @@
 # Hide-Subscription-Videos
 Hides certain YouTube videos in a user's subscription feed based on keywords found in video titles
 
-![image](https://user-images.githubusercontent.com/17418745/172032774-94690878-0b12-4e1e-be54-10990c006a10.png)
+![image](https://user-images.githubusercontent.com/17418745/172076259-5e2e9372-3b65-4848-8f96-4ee3b41a8b1d.png)
 
 ![image](https://user-images.githubusercontent.com/17418745/172076241-fc3672f1-aced-4309-9dcd-0862c8ab2409.png)
 
