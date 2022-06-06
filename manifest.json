@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Hide Subscription Videos",
 	"description": "Hide certain videos from your Subscription feed based on keywords in a video's title",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"icons": {
 		"256": "icons/extLogo.png"
 	},
