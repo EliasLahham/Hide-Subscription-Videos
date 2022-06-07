@@ -1,3 +1,9 @@
+/*
+	Developer: https://github.com/EliasLahham
+	GitHub: https://github.com/EliasLahham/Hide-Subscription-Videos
+	Add-on page: https://addons.mozilla.org/en-US/firefox/addon/hide-subscription-videos/
+*/
+
 const app = document.querySelector('ytd-app');
 
 function startUp() {
@@ -19,14 +25,16 @@ function scrapeForVideos() {
 			hideVideo(Object.keys(keywords), video, index)
 		});
 	}).catch(error => {
-		console.log('[Hide-Subscription-Videos] Error: ' + error);
+		console.log('%c[Hide-Subscription-Videos] Error: ' + error, 'color: #03fc24;');
+	}).finally(() => {
+		console.log('%c[Hide-Subscription-Videos] Done.', 'color: #03fc24;');
 	});
 }
 
 function hideVideo(keywords, video, index) {
 	keywords.every(keyword => {
 		if (video.innerText.toLowerCase().includes(keyword)) {
-			console.log(`Hiding video: ${video.innerText}`);
+			console.log(`%c[Hide-Subscription-Videos] Hiding video: ${video.innerText}`, 'color: #03fc24;');
 			video.remove();
 			return false;
 		}
